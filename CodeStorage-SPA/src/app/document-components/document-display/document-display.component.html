@@ -1,0 +1,15 @@
+<form #codeStore="ngForm" class="container mt-4">
+   <div class="top-el mb-1">
+   <textarea spellcheck="false" id="file-name" maxlength=30
+      name="name" rows=1 cols=25 class="non-resizable"
+      placeholder="Enter file name" [(ngModel)]="document.title"></textarea>
+   <div>
+      <button class="btn btn-danger mr-2" (click)="deleteDocument()">Delete</button>
+      <button [disabled]="!dataHasChanged()" type="submit" class="btn btn-success"
+      (click)="saveChanges()">Save changes</button>
+   </div>
+   </div>
+   <textarea spellcheck="false" id="code-area" 
+      name="code-area" rows=20 class="form-control text-area non-resizable"
+      placeholder="Your code goes here" [(ngModel)]="document.content"></textarea>
+</form>

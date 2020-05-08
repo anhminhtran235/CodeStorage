@@ -1,0 +1,29 @@
+.text-area
+{
+    width: 100%;
+    height: 70vh;
+}
+
+#file-name
+{
+  resize: none;
+  display: inline-block;
+
+}
+
+#code-area
+{
+  resize: none;
+}
+
+.save-changes
+{
+  display: inline-block;
+  margin-right: 0px;
+}
+
+.top-el
+{
+  display: flex;
+    justify-content: space-between;
+}

@@ -1,0 +1,8 @@
+<div class="container mt-5">
+  <div class="row">
+      <h4 *ngIf="documents.length==0">No document yet</h4>
+      <div *ngFor="let document of documents" class="col-lg-2 col-md-3 col-sm-6">
+      <app-document-individual [document]="document"></app-document-individual>
+      </div>
+  </div>
+</div>

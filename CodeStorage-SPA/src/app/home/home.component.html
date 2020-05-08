@@ -22,8 +22,10 @@
     <h1>Code Storage</h1>
     <p class="lead">Never have to worry about memory anymore!</p>
     <div class="text-center">
-      <button class="btn btn-warning btn-lg mr-2" type="submit">My Documents</button>
-      <button class="btn btn-success btn-lg" type="submit">New Document</button>
+      <button class="btn btn-warning btn-lg mr-2"
+        [routerLink]="['/documents']" type="submit">My Documents</button>
+      <button class="btn btn-success btn-lg" type="submit" 
+        (click)="newDocument()">New Document</button>
     </div>
   </div>
 </div>
