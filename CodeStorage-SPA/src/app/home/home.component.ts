@@ -43,4 +43,9 @@ export class HomeComponent implements OnInit {
         this.route.navigate(['documents']);
       });
   }
+
+  goToLink(url: string)
+  {
+    window.open(url, '_blank');
+  }
 }

@@ -18,15 +18,18 @@ namespace CodeStorage.API.Controllers
     {
         private readonly IAuthRepository authRepository;
         private readonly IConfiguration config;
-        public AuthController(IAuthRepository authRepository, IConfiguration config)
+        private readonly ICodeStorageRepository codeStorageRepository;
+        public AuthController(IAuthRepository authRepository, IConfiguration config,
+                              ICodeStorageRepository codeStorageRepository)
         {
+            this.codeStorageRepository = codeStorageRepository;
             this.config = config;
             this.authRepository = authRepository;
         }
 
         [HttpPost("login")]
         public async Task<IActionResult> Login(UserForLoginDto userForLogin)
-        {          
+        {
             User user = await authRepository.Login(userForLogin.Name, userForLogin.Password);
 
             if (user == null)
@@ -36,9 +39,9 @@ namespace CodeStorage.API.Controllers
 
             var claims = new[]
             {
-                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                new Claim(ClaimTypes.Name, user.Name)
-            };
+                    new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                    new Claim(ClaimTypes.Name, user.Name)
+                };
 
             var key = new SymmetricSecurityKey(Encoding
                     .UTF8.GetBytes(config.GetSection("AppSettings:Token").Value));
@@ -53,10 +56,10 @@ namespace CodeStorage.API.Controllers
             };
 
             var tokenHandler = new JwtSecurityTokenHandler();
-            
+
             var token = tokenHandler.CreateToken(tokenDescriptor);
 
-            return Ok(new 
+            return Ok(new
             {
                 token = tokenHandler.WriteToken(token)
             });
@@ -78,6 +81,5 @@ namespace CodeStorage.API.Controllers
 
             return StatusCode(200);
         }
-
-    }
+}
 }

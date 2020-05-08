@@ -3,6 +3,8 @@ import { User } from '../classes/user';
 import { AuthService } from '../_services/auth.service';
 import { AlertifyService } from '../_services/alertify.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { DocumentService } from '../_services/document.service';
+import { CodingDocument } from '../classes/codingDocument';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +15,8 @@ export class RegisterComponent implements OnInit {
   user = new User();
   @Output() cancelRegistration = new EventEmitter();
   registerForm: FormGroup;
-  constructor(private authService: AuthService, private alertify: AlertifyService) { }
+  constructor(private authService: AuthService, private alertify: AlertifyService,
+              private documentService: DocumentService) { }
 
   ngOnInit() {
     this.registerForm = new FormGroup(
@@ -47,4 +50,5 @@ export class RegisterComponent implements OnInit {
         this.alertify.error(error);
       });
   }
+
 }
