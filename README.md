@@ -5,7 +5,7 @@ The app has simple functionalities such as: Login, logout, register (and validat
 
 Concepts used in the project:
 
-- Related to ASP.NET Core and C#
+1/ Related to ASP.NET Core and C#
 
 + Creating Controllers to listen to HTTP requests
 
@@ -23,7 +23,7 @@ Concepts used in the project:
 
 + Global Exception Handling
 
-- Related to Angular
+2/ Related to Angular
 
 + Interpolation, Property binding, 2 way binding
 
@@ -39,4 +39,4 @@ Concepts used in the project:
 
 + Interface in Typescript
 
-- 3rd party libraries: Bootstrap, Ngx Bootstrap, Bootswatch, Alertify, Angular JWT
+3/ 3rd party libraries: Bootstrap, Ngx Bootstrap, Bootswatch, Alertify, Angular JWT
