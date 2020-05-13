@@ -47,3 +47,7 @@ Web app link on Azure: https://codestorage.azurewebsites.net/
 
 
 3/ 3rd party libraries: Bootstrap, Ngx Bootstrap, Bootswatch, Alertify, Angular JWT
+
+May 2020
+
+Created by Anh Minh Tran
